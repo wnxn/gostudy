@@ -14,7 +14,7 @@ func Create(val int) *Node {
 }
 
 func (t *Node) Print() {
-	fmt.Println(t.Value)
+	fmt.Printf("%d ",t.Value)
 }
 
 func (t *Node) SetValue(v int) {
@@ -32,6 +32,20 @@ func Traverse(p *Node) {
 	Traverse(p.Left)
 	p.Print()
 	Traverse(p.Right)
+}
+
+func (p *Node)TraverseFunc(f func (*Node)){
+	if p == nil {
+		return
+	}
+
+	p.Left.TraverseFunc(f)
+	f(p)
+	p.Right.TraverseFunc(f)
+}
+
+func ClosurePrint(p *Node){
+	fmt.Printf("(%T,%d) ", p, p.Value)
 }
 
 func CreateTree() *Node {

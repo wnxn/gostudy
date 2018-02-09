@@ -2,23 +2,8 @@ package main
 
 import (
 	"fmt"
-	"gostudy/tree"
+	"github.com/wnxn/gostudy/tree"
 )
-
-type myTreeNode struct{
-	t *tree.Node
-}
-
-func (node *myTreeNode)post(){
-	if node == nil || node.t==nil{
-		return
-	}
-	left:=myTreeNode{node.t.Left}
-	left.post()
-	right:=myTreeNode{node.t.Right}
-	right.post()
-	fmt.Printf("%d ",node.t.Value)
-}
 
 func main() {
 	var p1 tree.Node
@@ -59,6 +44,4 @@ func main() {
 	fmt.Println("postOrder:")
 	fmt.Println((*p4).PostOrder())
 
-	tmp:=myTreeNode{t:p4}
-	tmp.post()
 }

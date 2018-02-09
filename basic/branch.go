@@ -1,8 +1,7 @@
-package ch02
+package main
 
 import (
 	"fmt"
-
 	"io/ioutil"
 	"strconv"
 	"os"

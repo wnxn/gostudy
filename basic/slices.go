@@ -4,8 +4,16 @@ import (
 	"fmt"
 )
 
+//func change(s* []int){
+//	*s = append(*s, len(*s))
+//	(*s)[0] = len(*s)
+//	fmt.Printf("type:%T, len:%d, cap:%d, addr=%x\n", s, len(*s), cap(*s), s)
+//}
+
 func change(s []int){
-	s[0] = 100
+	s = append(s, len(s))
+	(s)[0] = len(s)
+	fmt.Printf("type:%T, len:%d, cap:%d, addr=%x\n", s, len(s), cap(s), s)
 }
 
 func main(){
@@ -17,9 +25,9 @@ func main(){
 	fmt.Println(s2)
 	fmt.Println(arr)
 
-	change(s1)
-	change(s2)
-	change(arr[:])
+//	change(s1)
+//	change(s2)
+//	change(arr[:])
 	fmt.Println("changed slice")
 	fmt.Println(s1)
 	fmt.Println(s2)
@@ -52,6 +60,12 @@ func main(){
 	s3 = append(s3, 0)
 	copy(s3[4:], s3[3:])
 	fmt.Println(s3)
+
+	// view slice func changes
+	for i:=0; i < 20; i++{
+		fmt.Printf("s[0]=%d, type:%T, len:%d, cap:%d, addr=%x\n", s3[0], s3, len(s3), cap(s3), s3)
+		change(s3)
+	}
 }
 
 

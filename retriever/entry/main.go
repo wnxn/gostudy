@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"gostudy/retriever/mock"
-	"gostudy/retriever/real"
+	"github.com/wnxn/gostudy/retriever/mock"
+	"github.com/wnxn/gostudy/retriever/real"
 	"time"
 )
 

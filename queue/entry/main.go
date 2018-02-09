@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gostudy/queue"
+	"github.com/wnxn/gostudy/queue"
 
 	"fmt"
 )

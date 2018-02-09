@@ -1,7 +1,7 @@
 package main
 
 import (
-	"gostudy/interface/text"
+	"github.com/wnxn/gostudy/interface"
 	"fmt"
 )
 
