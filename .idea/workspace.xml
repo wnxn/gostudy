@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f2824ed1-68cc-48b5-b191-d6b715b6960c" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/tree/entry/entry.go" afterPath="$PROJECT_DIR$/tree/entry/entry.go" />
-      <change beforePath="$PROJECT_DIR$/tree/node.go" afterPath="$PROJECT_DIR$/tree/node.go" />
+      <change beforePath="$PROJECT_DIR$/functional/err.go" afterPath="$PROJECT_DIR$/errhandling/err.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,30 +13,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/retriever/entry/main.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-              <folding>
-                <element signature="e#14#123#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fib.go" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functional/fib.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="21" />
-              <folding>
-                <element signature="e#14#57#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="fibonacci.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functional/fib/fibonacci.go">
           <provider selected="true" editor-type-id="text-editor">
@@ -48,14 +23,56 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="err.go" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/functional/err.go">
+      <file leaf-file-name="err.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/errhandling/err.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+            <state relative-caret-position="108">
+              <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/errhandling/filelistingserver/web.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="378">
+              <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
               <folding>
-                <element signature="e#14#47#0" expanded="true" />
+                <element signature="e#14#157#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="handler.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/errhandling/filelistingserver/filelisting/handler.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="702">
+              <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+              <folding>
+                <element signature="e#21#62#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="server.go" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Go/src/net/http/server.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="2312" column="5" lean-forward="false" selection-start-line="2312" selection-start-column="5" selection-end-line="2312" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="request.go" pinned="false" current-in-tab="false">
+        <entry file="file://C:/Go/src/net/http/request.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-265">
+              <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,7 +80,7 @@
       <file leaf-file-name="defer.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functional/defer.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
+            <state relative-caret-position="540">
               <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
               <folding>
                 <element signature="e#14#95#0" expanded="true" />
@@ -92,43 +109,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bufio.go" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Go/src/bufio/bufio.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="546" column="5" lean-forward="false" selection-start-line="546" selection-start-column="5" selection-end-line="546" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="io.go" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Go/src/io/io.go">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="89" column="23" lean-forward="true" selection-start-line="89" selection-start-column="23" selection-end-line="89" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fib.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fib.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go File" />
         <option value="Go Application" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
@@ -185,6 +172,9 @@
         <option value="$PROJECT_DIR$/functional/fib/fibonacci.go" />
         <option value="$PROJECT_DIR$/functional/defer.go" />
         <option value="$PROJECT_DIR$/functional/err.go" />
+        <option value="$PROJECT_DIR$/errhandling/err.go" />
+        <option value="$PROJECT_DIR$/errhandling/filelistingserver/filelisting/handler.go" />
+        <option value="$PROJECT_DIR$/errhandling/filelistingserver/web.go" />
       </list>
     </option>
   </component>
@@ -195,10 +185,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="33" />
-    <option name="y" value="28" />
-    <option name="width" value="1818" />
-    <option name="height" value="1086" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1474" />
+    <option name="height" value="988" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="1" id="Add" />
@@ -230,7 +220,13 @@
             <path>
               <item name="gostudy" type="b2602c69:ProjectViewProjectNode" />
               <item name="gostudy" type="462c0819:PsiDirectoryNode" />
-              <item name="basic" type="462c0819:PsiDirectoryNode" />
+              <item name="errhandling" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="gostudy" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gostudy" type="462c0819:PsiDirectoryNode" />
+              <item name="errhandling" type="462c0819:PsiDirectoryNode" />
+              <item name="filelistingserver" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="gostudy" type="b2602c69:ProjectViewProjectNode" />
@@ -246,7 +242,7 @@
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="go.sdk.automatically.set" value="true" />
-    <property name="DefaultGoTemplateProperty" value="Go Application" />
+    <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="settings.editor.selected.configurable" value="go.autoimport" />
     <property name="configurable.Global.GOPATH.is.expanded" value="true" />
     <property name="configurable.Project.GOPATH.is.expanded" value="true" />
@@ -254,6 +250,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GOPATH\src\github.com\wnxn\gostudy\errhandling" />
       <recent name="D:\GOPATH\src\gostudy\tree\entry" />
       <recent name="D:\GOPATH\src\gostudy\ch02" />
     </key>
@@ -270,7 +267,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build err.go">
+  <component name="RunManager" selected="Go Build.go build web.go">
     <configuration name="go build defer.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="gostudy" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -287,6 +284,14 @@
       <filePath value="$PROJECT_DIR$/tree/entry/entry.go" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
+    <configuration name="go build err.go (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="gostudy" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/errhandling/err.go" />
+      <directory value="$PROJECT_DIR$/" />
+    </configuration>
     <configuration name="go build err.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="gostudy" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -295,36 +300,28 @@
       <filePath value="$PROJECT_DIR$/functional/err.go" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
-    <configuration name="go build main.go (2)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+    <configuration name="go build web.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
       <module name="gostudy" />
       <working_directory value="$PROJECT_DIR$/" />
       <go_parameters value="-i" />
       <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/retriever/entry/main.go" />
-      <directory value="$PROJECT_DIR$/" />
-    </configuration>
-    <configuration name="go build slices.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
-      <module name="gostudy" />
-      <working_directory value="$PROJECT_DIR$/" />
-      <go_parameters value="-i" />
-      <kind value="FILE" />
-      <filePath value="$PROJECT_DIR$/basic/slices.go" />
+      <filePath value="$PROJECT_DIR$/errhandling/filelistingserver/web.go" />
       <directory value="$PROJECT_DIR$/" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Go Build.go build slices.go" />
-      <item index="1" class="java.lang.String" itemvalue="Go Build.go build main.go (2)" />
-      <item index="2" class="java.lang.String" itemvalue="Go Build.go build entry.go" />
-      <item index="3" class="java.lang.String" itemvalue="Go Build.go build defer.go" />
-      <item index="4" class="java.lang.String" itemvalue="Go Build.go build err.go" />
+      <item index="0" class="java.lang.String" itemvalue="Go Build.go build entry.go" />
+      <item index="1" class="java.lang.String" itemvalue="Go Build.go build defer.go" />
+      <item index="2" class="java.lang.String" itemvalue="Go Build.go build err.go" />
+      <item index="3" class="java.lang.String" itemvalue="Go Build.go build err.go (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Go Build.go build web.go" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Go Build.go build err.go" />
-        <item index="1" class="java.lang.String" itemvalue="Go Build.go build defer.go" />
-        <item index="2" class="java.lang.String" itemvalue="Go Build.go build entry.go" />
-        <item index="3" class="java.lang.String" itemvalue="Go Build.go build slices.go" />
-        <item index="4" class="java.lang.String" itemvalue="Go Build.go build main.go (2)" />
+        <item index="0" class="java.lang.String" itemvalue="Go Build.go build web.go" />
+        <item index="1" class="java.lang.String" itemvalue="Go Build.go build err.go (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Go Build.go build err.go" />
+        <item index="3" class="java.lang.String" itemvalue="Go Build.go build defer.go" />
+        <item index="4" class="java.lang.String" itemvalue="Go Build.go build entry.go" />
       </list>
     </recent_temporary>
   </component>
@@ -335,16 +332,15 @@
     <option name="ACTIVE_ACTIONS" value=",Show Private Members" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="2302" height="1368" extended-state="6" />
-    <editor active="true" />
+    <frame x="-9" y="-9" width="2462" height="1458" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2648115" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24706867" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3208645" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020108" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19552752" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26949543" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3304253" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40502185" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -377,10 +373,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ch02/maxSubarray.go" />
-    <entry file="file://$PROJECT_DIR$/ch02/slices.go" />
-    <entry file="file://$PROJECT_DIR$/ch02/strings.go" />
-    <entry file="file://$PROJECT_DIR$/retriever/real/read.go" />
     <entry file="file://C:/Go/src/net/http/httputil/dump.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -412,13 +404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Go/src/net/http/server.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="1855" column="54" lean-forward="false" selection-start-line="1855" selection-start-column="45" selection-end-line="1855" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/interface/text/paper.go" />
     <entry file="file://$PROJECT_DIR$/interface/text/article.go" />
     <entry file="file://$PROJECT_DIR$/retriever/main.go" />
@@ -442,6 +427,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="6" column="26" lean-forward="false" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
+          <folding>
+            <element signature="e#14#26#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -466,6 +454,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1803">
           <caret line="16" column="16" lean-forward="false" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+          <folding>
+            <element signature="e#14#100#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -473,6 +464,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
           <caret line="33" column="18" lean-forward="true" selection-start-line="33" selection-start-column="18" selection-end-line="33" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -610,7 +602,7 @@
         <state relative-caret-position="297">
           <caret line="11" column="1" lean-forward="true" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
           <folding>
-            <element signature="e#14#123#0" expanded="true" />
+            <element signature="e#14#123#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -620,7 +612,7 @@
         <state relative-caret-position="459">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="21" />
           <folding>
-            <element signature="e#14#57#0" expanded="true" />
+            <element signature="e#14#57#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -654,17 +646,7 @@
         <state relative-caret-position="594">
           <caret line="22" column="31" lean-forward="false" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
           <folding>
-            <element signature="e#172#201#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/functional/defer.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-          <folding>
-            <element signature="e#14#95#0" expanded="true" />
+            <element signature="e#172#201#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -693,12 +675,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functional/err.go">
+    <entry file="file://$PROJECT_DIR$/functional/defer.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+        <state relative-caret-position="540">
+          <caret line="20" column="22" lean-forward="true" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
           <folding>
-            <element signature="e#14#47#0" expanded="true" />
+            <element signature="e#14#95#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/net/http/request.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-265">
+          <caret line="97" column="5" lean-forward="false" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/net/http/status.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="38" column="4" lean-forward="false" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/errhandling/err.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="4" column="9" lean-forward="true" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Go/src/net/http/server.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="2312" column="5" lean-forward="false" selection-start-line="2312" selection-start-column="5" selection-end-line="2312" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/errhandling/filelistingserver/filelisting/handler.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="702">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding>
+            <element signature="e#21#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/errhandling/filelistingserver/web.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding>
+            <element signature="e#14#157#0" expanded="true" />
           </folding>
         </state>
       </provider>
