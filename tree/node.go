@@ -13,7 +13,11 @@ func Create(val int) *Node {
 	return &Node{Value: val}
 }
 
-func (t *Node) Print() {
+func (t Node) Print() {
+	fmt.Printf("%d ",t.Value)
+}
+
+func (t Node) Print2() {
 	fmt.Printf("%d ",t.Value)
 }
 
