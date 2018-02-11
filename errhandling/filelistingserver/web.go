@@ -16,9 +16,24 @@ func errWrapper(handler appHandler) func(
 	*http.Request){
 		return func(writer http.ResponseWriter,
 		request *http.Request){
+			defer func(){
+				if r:=recover(); r!= nil{
+					log.Printf("Panic: v", r)
+					http.Error(writer,
+						http.StatusText(http.StatusBadRequest),
+							http.StatusBadRequest)
+				}
+			}()
 			err := handler(writer, request)
+
 			if err != nil{
 				log.Printf("Error occured %s\n", err.Error())
+				if userErr,ok := err.(userError);ok{
+					http.Error(writer,
+						userErr.Message(),
+							http.StatusBadRequest)
+					return
+				}
 				code := http.StatusOK
 				switch {
 				case os.IsNotExist(err):
@@ -35,8 +50,13 @@ func errWrapper(handler appHandler) func(
 		}
 }
 
+type userError interface{
+	error
+	Message() string
+}
+
 func main() {
-	http.HandleFunc("/list/", errWrapper(filelisting.HandlerFileList))
+	http.HandleFunc("/", errWrapper(filelisting.HandlerFileList))
 	err:=http.ListenAndServe(":8888", nil)
 	if err!=nil{
 		panic(err)
