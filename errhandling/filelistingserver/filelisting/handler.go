@@ -22,7 +22,6 @@ func(e userError)Message()string{
 
 func HandlerFileList(writer http.ResponseWriter,
 	request *http.Request)error{
-		fmt.Println()
 		// URL prefix error
 		if strings.Index(request.URL.Path,prefix) !=0{
 			return userError(fmt.Sprintf("path %s must start with %s",
@@ -31,6 +30,7 @@ func HandlerFileList(writer http.ResponseWriter,
 		}
 		path := request.URL.Path[len(prefix):]
 		file,err:= os.Open(path)
+		defer file.Close()
 		if err != nil{
 			// If we use error wrapper, not print error details
 			//	panic("open URL err")
@@ -40,7 +40,6 @@ func HandlerFileList(writer http.ResponseWriter,
 			//	http.StatusInternalServerError)
 			return err
 		}
-		defer file.Close()
 
 		all, err:=ioutil.ReadAll(file)
 		if err != nil{
