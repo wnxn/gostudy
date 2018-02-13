@@ -17,9 +17,6 @@ func (t Node) Print() {
 	fmt.Printf("%d ",t.Value)
 }
 
-func (t Node) Print2() {
-	fmt.Printf("%d ",t.Value)
-}
 
 func (t *Node) SetValue(v int) {
 	if t == nil {

@@ -12,5 +12,4 @@ func main() {
 	fmt.Println("Print2 problem")
 	fmt.Printf("%T\n", p3)
 	p3.Print()
-	p3.Print2()
 }
