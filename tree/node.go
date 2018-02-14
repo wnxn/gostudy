@@ -9,6 +9,8 @@ type Node struct {
 	Left, Right *Node
 }
 
+
+
 func Create(val int) *Node {
 	return &Node{Value: val}
 }
@@ -35,7 +37,7 @@ func Traverse(p *Node) {
 	Traverse(p.Right)
 }
 
-func (p *Node)TraverseFunc(f func (*Node)){
+func (p *Node)MyTraverseFunc(f func (*Node)){
 	if p == nil {
 		return
 	}
@@ -43,6 +45,17 @@ func (p *Node)TraverseFunc(f func (*Node)){
 	p.Left.TraverseFunc(f)
 	f(p)
 	p.Right.TraverseFunc(f)
+}
+
+func (p *Node)MyTraverseWithChannel()chan int{
+	ret := make(chan int)
+	go func(){
+		p.MyTraverseFunc(func (node *Node){
+			ret <- node.Value
+		})
+		close(ret)
+	}()
+	return ret
 }
 
 func ClosurePrint(p *Node){
@@ -59,4 +72,8 @@ func CreateTree() *Node {
 	p.Right.Right = &Node{Value: 6}
 	p.Right.Left.Right = &Node{Value: 7}
 	return p
+}
+
+func CreateNode(value int) *Node {
+	return &Node{Value: value}
 }
