@@ -2,48 +2,51 @@ package main
 
 import (
 	"fmt"
+	"sync"
 )
+
 
 type Worker struct {
 	in chan int
-	done chan bool
+	done func()
 }
 
-func worker(i int, in <-chan int, done chan<- bool){
-	for n := range in{ // for loop way 1
+func worker(i int, c Worker){
+	for n := range c.in{ // for loop way 1
 			fmt.Printf("func worker %d, value = %c\n", i, n)
-			go func(){done<-true}()
+			c.done()
+			//go func(){done<-true}()
 	//	}// end if
 	}//end for loop
 
 }
 
-func createWorker(id int)Worker{
+func createWorker(id int, w *sync.WaitGroup)Worker{
 	c := Worker{
 		in:make(chan int),
-		done:make(chan bool),
+		done: w.Done,
 	}
-	go worker(id, c.in,c.done)
+	go worker(id, c)
 	return c
 }
-const  num=10
+const  num=20
 func chanDemo(){
 	var workers [num]Worker
+	var wg sync.WaitGroup
 	for i:=0;i<num;i++{
-		workers[i] = createWorker(i)
+		workers[i] = createWorker(i,&wg)
 	}
 	for i,worker:=range workers{
+		wg.Add(1)
 		worker.in <- 'a'+i
+
 	}
 	for i,worker:=range workers{
+		wg.Add(1)
 		worker.in<- 'A'+i
-	}
 
-	// wait for all of them
-	for _, worker:=range workers{
-		<-worker.done
-		<-worker.done
 	}
+	wg.Wait()
 }
 
 func main() {
