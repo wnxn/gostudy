@@ -3,8 +3,22 @@ package main
 import (
 	"fmt"
 	"time"
-//	"math/rand"
+	"math/rand"
 )
+
+func myWorker(i int, c <-chan int){
+	for n := range c{ // for loop way 1
+		fmt.Printf("func worker %d, value = %d\n", i, n)
+	}//end for loop
+
+}
+
+func myCreateWorker(id int)chan<-int{
+	c := make(chan int)
+	go myWorker(id, c)
+	return c
+}
+
 
 func myGenerator() <-chan int{
 	c := make(chan int)
@@ -13,8 +27,7 @@ func myGenerator() <-chan int{
 		for{
 			c <- value
 			value++
-			fmt.Printf("myGenerator %d\n", value)
-	//		time.Sleep(time.Millisecond *time.Duration(rand.Int()%1500))
+			time.Sleep(time.Millisecond *time.Duration(rand.Intn(1500)))
 		}
 
 	}()
@@ -25,18 +38,23 @@ func main() {
 	c1 := myGenerator()
 	c2 := myGenerator()
 	tm:=time.After(10*time.Second)
-	num:=0
+	w:=myCreateWorker(0)
+	var values []int
 	for{
+		var activeWorker chan<-int
+		var activeValue int
+		if len(values)>0{
+			activeWorker = w
+			activeValue = values[0]
+		}
 		select{
 		case n :=<-c1:
-	//		time.Sleep(time.Millisecond*2)
-			fmt.Printf("No. %d: Received from c1 %d\n", num, n)
-			num++
+			values = append(values,n)
 		case n :=<-c2:
-
-			fmt.Printf("No. %d: Received from c2 %d\n", num, n)
-			time.Sleep(time.Millisecond)
-			num++
+			values = append(values,n)
+		case activeWorker <-activeValue:
+			fmt.Println(len(values))
+			values = values[1:]
 		case <-tm:
 			fmt.Println("End of 10 seconds")
 			return
