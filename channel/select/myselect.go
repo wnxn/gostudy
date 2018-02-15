@@ -35,30 +35,26 @@ func myGenerator() <-chan int{
 }
 
 func main() {
-	c1 := myGenerator()
-	c2 := myGenerator()
-	tm:=time.After(10*time.Second)
-	w:=myCreateWorker(0)
-	var values []int
-	for{
-		var activeWorker chan<-int
-		var activeValue int
-		if len(values)>0{
-			activeWorker = w
-			activeValue = values[0]
+	var c1, c2 = myGenerator(),myGenerator()
+	var worker = myCreateWorker(0)
+
+	n:=0
+	hasValue:=false
+	for {
+		var activeWorker chan<- int
+		if hasValue{
+			activeWorker = worker
 		}
-		select{
-		case n :=<-c1:
-			values = append(values,n)
-		case n :=<-c2:
-			values = append(values,n)
-		case activeWorker <-activeValue:
-			fmt.Println(len(values))
-			values = values[1:]
-		case <-tm:
-			fmt.Println("End of 10 seconds")
-			return
+
+		select {
+		case n = <-c1:
+			hasValue=true
+		case n = <-c2:
+			hasValue=true
+		case activeWorker <- n:
+			hasValue = false
 		}
 	}
+
 
 }
