@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main(){
 	var arr1 [5]int
@@ -12,6 +15,8 @@ func main(){
 	printArr(&arr2)
 	fmt.Println("print arr1 arr2 arr3")
 	fmt.Println(arr1, arr2,arr3)
+	time.Sleep(time.Millisecond)
+	go printArr(&arr2)
 }
 
 func printArr(arr *[5]int){

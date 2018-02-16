@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"time"
+	//"reflect"
 )
 
 func worker(i int, c <-chan int){
@@ -64,4 +65,5 @@ func main() {
 	bufferedChannel()
 	fmt.Println("Channel close")
 	channelClose()
+
 }
