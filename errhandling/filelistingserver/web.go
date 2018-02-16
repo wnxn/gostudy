@@ -6,6 +6,7 @@ import (
 	"os"
 	//"github.com/gpmgo/gopm/modules/log"
 	"log"
+	_ "net/http/pprof"
 )
 
 type appHandler func(writer http.ResponseWriter,
