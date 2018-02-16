@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"github.com/wnxn/gostudy/basic/pkgtest"
+)
 
 func messageHello() string{
 	fmt.Println("Run messageHello() string")
