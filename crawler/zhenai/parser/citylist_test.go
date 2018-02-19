@@ -19,9 +19,9 @@ func TestParseCityList(t *testing.T) {
 		"http://www.zhenai.com/zhenghun/alashanmeng",
 	}
 	expectedCities:=[]string{
-		"阿坝",
-		"阿克苏",
-		"阿拉善盟",
+		"city 阿坝",
+		"city 阿克苏",
+		"city 阿拉善盟",
 	}
 	const resultSize = 470
 	if len(result.Requests) != resultSize{

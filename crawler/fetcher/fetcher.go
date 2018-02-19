@@ -23,6 +23,7 @@ func determineEncoding(r *bufio.Reader) encoding.Encoding{
 }
 
 func Fetch(url string) ([]byte, error){
+	log.Printf("Fetching: %s", url)
 	resp, err:=http.Get(url)
 	if err != nil{
 		return nil, err
