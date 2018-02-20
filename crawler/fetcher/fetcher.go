@@ -25,7 +25,7 @@ func determineEncoding(r *bufio.Reader) encoding.Encoding{
 
 var rateLimiter = time.Tick(10*time.Millisecond)
 func Fetch(url string) ([]byte, error){
-	<-rateLimiter
+	//<-rateLimiter
 	resp, err:=http.Get(url)
 	if err != nil{
 		return nil, err

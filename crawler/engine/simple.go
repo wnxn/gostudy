@@ -28,6 +28,8 @@ func (e SimpleEngine)Run(seeds ...Request){
 	}
 }
 
+// Fetch contents from URL
+// Resolve URL from contents
 func worker(r Request)(ParseResult,error){
 	log.Printf("Fetching: %s", r.Url)
 	body, err :=fetcher.Fetch(r.Url)
