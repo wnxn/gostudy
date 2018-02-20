@@ -10,6 +10,7 @@ import (
 	"golang.org/x/text/encoding"
 	"golang.org/x/text/encoding/unicode"
 	"log"
+	"time"
 )
 
 func determineEncoding(r *bufio.Reader) encoding.Encoding{
@@ -22,8 +23,9 @@ func determineEncoding(r *bufio.Reader) encoding.Encoding{
 	return e
 }
 
+var rateLimiter = time.Tick(10*time.Millisecond)
 func Fetch(url string) ([]byte, error){
-	log.Printf("Fetching: %s", url)
+	<-rateLimiter
 	resp, err:=http.Get(url)
 	if err != nil{
 		return nil, err
