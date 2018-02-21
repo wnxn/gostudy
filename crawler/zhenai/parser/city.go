@@ -5,12 +5,15 @@ import (
 	"github.com/wnxn/gostudy/crawler/engine"
 )
 
-const cityRe = `<a href="(http://album.zhenai.com/u/[0-9]+)" [^>]*>([^<]+)</a>`
+var(
+	cityRe = regexp.MustCompile(
+		`<a href="(http://album.zhenai.com/u/[0-9]+)" [^>]*>([^<]+)</a>`)
+	nextPageRe= regexp.MustCompile(
+		`href="(http://www.zhenai.com/zhenghun/[^"]+)"`)
+)
 
 func ParseCity(contents []byte) engine.ParseResult{
-	reg := regexp.MustCompile(cityRe)
-	userList :=reg.FindAllSubmatch(contents,-1)
-
+	userList :=cityRe.FindAllSubmatch(contents,-1)
 	result := engine.ParseResult{}
 	for _, i:=range userList{
 		user := i
@@ -21,6 +24,16 @@ func ParseCity(contents []byte) engine.ParseResult{
 				ParserFunc: func(c []byte) engine.ParseResult{
 					return ParseProfile(c, string(user[2]))
 				},
+			})
+	}
+
+	nextPage :=nextPageRe.FindAllSubmatch(contents, -1)
+	for _, i:=range nextPage{
+		result.Items=append(result.Items, "url " + string(i[1]))
+		result.Requests = append(result.Requests,
+			engine.Request{
+				Url: string(i[1]),
+				ParserFunc:ParseCity,
 			})
 	}
 	return result
