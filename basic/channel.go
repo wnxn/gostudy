@@ -4,6 +4,18 @@ import (
 	"fmt"
 )
 
+func ch8(){
+	ch:=make(chan int)
+	for i:=0;i<10;i++{
+		select {
+		case x:=<-ch:
+			fmt.Println(x)
+		case ch<-i:
+		default:
+			fmt.Println("default")
+		}
+	}
+}
 
 func oneroutine()string{
 	ch :=make(chan string)
@@ -14,5 +26,5 @@ func oneroutine()string{
 }
 
 func main() {
-	fmt.Println(oneroutine())
+	ch8()
 }
