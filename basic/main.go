@@ -1,5 +1,9 @@
 package main
 
 import (
-	"fmt"
+	"github.com/wnxn/gostudy/basic/oop"
 )
+
+func main(){
+	oop.Myset()
+}
