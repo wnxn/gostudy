@@ -1,5 +1,4 @@
 package tree
-
 func (p *Node) PreOrder() (vec []int) {
 	if p == nil {
 		return vec

@@ -2,6 +2,7 @@ package tree
 
 import (
 	"math"
+	"fmt"
 )
 
 func LowestCommonAncestorBinaryTree1(root *Node, p int, q int)*Node{
