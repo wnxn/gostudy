@@ -9,8 +9,6 @@ type Node struct {
 	Left, Right *Node
 }
 
-
-
 func Create(val int) *Node {
 	return &Node{Value: val}
 }
@@ -18,7 +16,6 @@ func Create(val int) *Node {
 func (t Node) Print() {
 	fmt.Printf("%d ",t.Value)
 }
-
 
 func (t *Node) SetValue(v int) {
 	if t == nil {
@@ -31,7 +28,6 @@ func Traverse(p *Node) {
 	if p == nil {
 		return
 	}
-
 	Traverse(p.Left)
 	p.Print()
 	Traverse(p.Right)
@@ -41,7 +37,6 @@ func (p *Node)MyTraverseFunc(f func (*Node)){
 	if p == nil {
 		return
 	}
-
 	p.Left.TraverseFunc(f)
 	f(p)
 	p.Right.TraverseFunc(f)
@@ -60,6 +55,13 @@ func (p *Node)MyTraverseWithChannel()chan int{
 
 func ClosurePrint(p *Node){
 	fmt.Printf("(%T,%d) ", p, p.Value)
+}
+
+func printTreenodeSlice(slice []*Node){
+	for _, v:=range slice{
+		fmt.Printf("%d, ", v.Value)
+	}
+	fmt.Println()
 }
 
 func CreateTree() *Node {
