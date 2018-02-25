@@ -1,9 +1,9 @@
 package main
 
 import (
-	"github.com/wnxn/gostudy/algorithm/linklist"
+	"github.com/wnxn/gostudy/algorithm/number"
 )
 
 func main() {
-	linklist.Deleteifmain()
+	number.BinarySearchMain()
 }
