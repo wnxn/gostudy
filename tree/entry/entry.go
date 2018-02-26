@@ -6,5 +6,16 @@ import (
 )
 
 func main() {
-	fmt.Println(tree.GetIndex("wang", 'a'))
+	root := tree.CreateMyTree1()
+	for _,v:=range root.MidOrder(){
+		fmt.Printf("%d, ", v)
+	}
+	fmt.Println()
+	for root.Left != nil{
+		root = root.Left
+	}
+	for root != nil{
+		root.Print()
+		root = tree.MidOrderNextNode(root)
+	}
 }

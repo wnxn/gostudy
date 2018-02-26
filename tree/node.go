@@ -6,7 +6,7 @@ import (
 
 type Node struct {
 	Value       int
-	Left, Right *Node
+	Left, Right,Parent *Node
 }
 
 func Create(val int) *Node {
@@ -22,6 +22,24 @@ func (t *Node) SetValue(v int) {
 		return
 	}
 	t.Value = v
+}
+
+func (t *Node)SetLeft(left *Node){
+	t.Left = left
+	left.Parent = t
+}
+
+func (t *Node)SetRight(right *Node){
+	t.Right = right
+	right.Parent = t
+}
+
+func (t *Node)GetLeft()*Node{
+	return t.Left
+}
+
+func (t *Node)GetRight()*Node{
+	return t.Right
 }
 
 func Traverse(p *Node) {
@@ -64,15 +82,39 @@ func printTreenodeSlice(slice []*Node){
 	fmt.Println()
 }
 
-func CreateTree() *Node {
+func CreateMyTree1() *Node {
+	//				1
+	//		2				3
+	//			4       5		6
+	//					  7
+	// preorder: 1243576
+	// midorder: 2415736
+	// postorder: 4275631
+	p := &Node{Value: 1}
+	p.SetLeft(&Node{Value: 2})
+	p.SetRight( &Node{Value: 3} )
+	p.GetLeft().SetRight(&Node{Value: 4})
+	p.GetRight().SetLeft(&Node{Value: 5})
+	p.GetRight().SetRight(&Node{Value: 6})
+	p.GetRight().GetLeft().SetRight(&Node{Value: 7})
+	return p
+}
 
-	p := &Node{Value: 1}           //				1
-	p.Left = &Node{Value: 2}       //		2				3
-	p.Right = &Node{Value: 3}      //			4       5		6
-	p.Left.Right = &Node{Value: 4} //					  7
-	p.Right.Left = &Node{Value: 5}
-	p.Right.Right = &Node{Value: 6}
-	p.Right.Left.Right = &Node{Value: 7}
+func CreateMyTree2() *Node {
+	//				1
+	//		2				3
+	//	4		5       		6
+	//		  7
+	// preorder: 1243576
+	// midorder: 2415736
+	// postorder: 4275631
+	p := &Node{Value: 1}
+	p.SetLeft(&Node{Value: 2})
+	p.SetRight( &Node{Value: 3} )
+	p.GetLeft().SetLeft(&Node{Value:4})
+	p.GetLeft().SetRight(&Node{Value:5})
+	p.GetRight().SetRight(&Node{Value: 6})
+	p.GetLeft().GetRight().SetLeft(&Node{Value: 7})
 	return p
 }
 
