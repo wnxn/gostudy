@@ -2,7 +2,7 @@ package tree
 
 import "testing"
 
-var root = CreateTree()
+var root = CreateMyTree1()
 
 var testcase = []struct{
 	valuep int
