@@ -26,16 +26,24 @@ func (t *Node) SetValue(v int) {
 
 func (t *Node)SetLeft(left *Node){
 	t.Left = left
+<<<<<<< HEAD
 	if left != nil{
 		left.Parent = t
 	}
+=======
+	left.Parent = t
+>>>>>>> d4759401f3b1a08e7c86603ea3314d4e0766e9fe
 }
 
 func (t *Node)SetRight(right *Node){
 	t.Right = right
+<<<<<<< HEAD
 	if right != nil{
 		right.Parent = t
 	}
+=======
+	right.Parent = t
+>>>>>>> d4759401f3b1a08e7c86603ea3314d4e0766e9fe
 }
 
 func (t *Node)GetLeft()*Node{
@@ -94,7 +102,11 @@ func CreateMyTree1() *Node {
 	// preorder: 1243576
 	// midorder: 2415736
 	// postorder: 4275631
+<<<<<<< HEAD
 	p := &Node{1,nil,nil,nil}
+=======
+	p := &Node{Value: 1}
+>>>>>>> d4759401f3b1a08e7c86603ea3314d4e0766e9fe
 	p.SetLeft(&Node{Value: 2})
 	p.SetRight( &Node{Value: 3} )
 	p.GetLeft().SetRight(&Node{Value: 4})

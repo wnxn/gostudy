@@ -1,9 +1,12 @@
 package main
 
 import (
-	"github.com/wnxn/gostudy/basic/oop"
+	"fmt"
 )
 
+func init(){
+	fmt.Println("init")
+}
 func main(){
-	oop.Myset()
+	fmt.Println("main")
 }
