@@ -107,18 +107,18 @@ func CreateMyTree1() *Node {
 
 func CreateMyTree2() *Node {
 	//				1
-	//		2				3
-	//	4		5       		6
+	//		3				2
+	//	6		5       4
 	//		  7
-	// preorder: 1243576
-	// midorder: 2415736
-	// postorder: 4275631
+	// preorder: 1365724
+	// midorder: 6375142
+	// postorder: 6753421
 	p := &Node{Value: 1}
-	p.SetLeft(&Node{Value: 2})
-	p.SetRight( &Node{Value: 3} )
-	p.GetLeft().SetLeft(&Node{Value:4})
+	p.SetLeft(&Node{Value: 3})
+	p.SetRight( &Node{Value: 2} )
+	p.GetLeft().SetLeft(&Node{Value:6})
 	p.GetLeft().SetRight(&Node{Value:5})
-	p.GetRight().SetRight(&Node{Value: 6})
+	p.GetRight().SetLeft(&Node{Value: 4})
 	p.GetLeft().GetRight().SetLeft(&Node{Value: 7})
 	return p
 }

@@ -73,7 +73,7 @@ func BenchmarkLowestCommonAncestorBinaryTree3(b *testing.B) {
 	test := testcase[1]
 	b.ResetTimer()
 	for i:=0;i<b.N;i++{
-		actual := LowestCommonAncestorBinaryTree3(root,test.valuep,test.valueq)
+		actual := LowestCommonAncestorBinaryTree2(root,test.valuep,test.valueq)
 		if actual.Value != test.expect{
 			b.Errorf("LCA3 input %d,%d, expect is %d, but actual is %d",
 				test.valuep,test.valueq,test.expect,actual)
