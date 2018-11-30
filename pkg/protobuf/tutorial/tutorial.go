@@ -23,10 +23,10 @@ func Write(){
 func GetAddressBook()*AddressBook{
 	person := &Person{}
 	person.Name = "Wang Xiaoer"
-	person.Id = 330123231
+	//person.Xx = 330123231
 	person.Email = "xiaoerwang@126.com"
 	person.Phones = []*Person_PhoneNumber{
-		&Person_PhoneNumber{Number: "13212345678", Type:Person_PhoneType(1)},
+		&Person_PhoneNumber{Number: "13212345678", Type:Person_WORK},
 	}
 	ts := timestamp.Timestamp{}
 	ts.Seconds = time.Now().Unix()

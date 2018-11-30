@@ -18,7 +18,10 @@ message Person {
     string number = 1;
     PhoneType type = 2;
   }
-
+  oneof contrace{
+    string str = 6;
+    int64 in = 7;
+  }
   repeated PhoneNumber phones = 4;
 
   google.protobuf.Timestamp last_updated = 5;

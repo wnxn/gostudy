@@ -1,0 +1,6 @@
+syntax = "proto3";
+package encoding;
+
+message IntMsg {
+    repeated int32 a = 1;
+}
