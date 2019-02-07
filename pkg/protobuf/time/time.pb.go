@@ -92,24 +92,174 @@ func (m *TimeResponse) GetServerTime() string {
 	return ""
 }
 
+type ServerPauseRpcRequest struct {
+	PauseSecond          int64    `protobuf:"varint,1,opt,name=pause_second,json=pauseSecond,proto3" json:"pause_second,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ServerPauseRpcRequest) Reset()         { *m = ServerPauseRpcRequest{} }
+func (m *ServerPauseRpcRequest) String() string { return proto.CompactTextString(m) }
+func (*ServerPauseRpcRequest) ProtoMessage()    {}
+func (*ServerPauseRpcRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_49a92d779a28c7fd, []int{2}
+}
+
+func (m *ServerPauseRpcRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ServerPauseRpcRequest.Unmarshal(m, b)
+}
+func (m *ServerPauseRpcRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ServerPauseRpcRequest.Marshal(b, m, deterministic)
+}
+func (m *ServerPauseRpcRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ServerPauseRpcRequest.Merge(m, src)
+}
+func (m *ServerPauseRpcRequest) XXX_Size() int {
+	return xxx_messageInfo_ServerPauseRpcRequest.Size(m)
+}
+func (m *ServerPauseRpcRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ServerPauseRpcRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ServerPauseRpcRequest proto.InternalMessageInfo
+
+func (m *ServerPauseRpcRequest) GetPauseSecond() int64 {
+	if m != nil {
+		return m.PauseSecond
+	}
+	return 0
+}
+
+type ServerPauseRpcResponse struct {
+	PauseSecond          int64    `protobuf:"varint,1,opt,name=pause_second,json=pauseSecond,proto3" json:"pause_second,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ServerPauseRpcResponse) Reset()         { *m = ServerPauseRpcResponse{} }
+func (m *ServerPauseRpcResponse) String() string { return proto.CompactTextString(m) }
+func (*ServerPauseRpcResponse) ProtoMessage()    {}
+func (*ServerPauseRpcResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_49a92d779a28c7fd, []int{3}
+}
+
+func (m *ServerPauseRpcResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ServerPauseRpcResponse.Unmarshal(m, b)
+}
+func (m *ServerPauseRpcResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ServerPauseRpcResponse.Marshal(b, m, deterministic)
+}
+func (m *ServerPauseRpcResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ServerPauseRpcResponse.Merge(m, src)
+}
+func (m *ServerPauseRpcResponse) XXX_Size() int {
+	return xxx_messageInfo_ServerPauseRpcResponse.Size(m)
+}
+func (m *ServerPauseRpcResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ServerPauseRpcResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ServerPauseRpcResponse proto.InternalMessageInfo
+
+func (m *ServerPauseRpcResponse) GetPauseSecond() int64 {
+	if m != nil {
+		return m.PauseSecond
+	}
+	return 0
+}
+
+type ClientPauseRpcRequest struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ClientPauseRpcRequest) Reset()         { *m = ClientPauseRpcRequest{} }
+func (m *ClientPauseRpcRequest) String() string { return proto.CompactTextString(m) }
+func (*ClientPauseRpcRequest) ProtoMessage()    {}
+func (*ClientPauseRpcRequest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_49a92d779a28c7fd, []int{4}
+}
+
+func (m *ClientPauseRpcRequest) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ClientPauseRpcRequest.Unmarshal(m, b)
+}
+func (m *ClientPauseRpcRequest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ClientPauseRpcRequest.Marshal(b, m, deterministic)
+}
+func (m *ClientPauseRpcRequest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ClientPauseRpcRequest.Merge(m, src)
+}
+func (m *ClientPauseRpcRequest) XXX_Size() int {
+	return xxx_messageInfo_ClientPauseRpcRequest.Size(m)
+}
+func (m *ClientPauseRpcRequest) XXX_DiscardUnknown() {
+	xxx_messageInfo_ClientPauseRpcRequest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ClientPauseRpcRequest proto.InternalMessageInfo
+
+type ClientPauseRpcResponse struct {
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *ClientPauseRpcResponse) Reset()         { *m = ClientPauseRpcResponse{} }
+func (m *ClientPauseRpcResponse) String() string { return proto.CompactTextString(m) }
+func (*ClientPauseRpcResponse) ProtoMessage()    {}
+func (*ClientPauseRpcResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_49a92d779a28c7fd, []int{5}
+}
+
+func (m *ClientPauseRpcResponse) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_ClientPauseRpcResponse.Unmarshal(m, b)
+}
+func (m *ClientPauseRpcResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_ClientPauseRpcResponse.Marshal(b, m, deterministic)
+}
+func (m *ClientPauseRpcResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_ClientPauseRpcResponse.Merge(m, src)
+}
+func (m *ClientPauseRpcResponse) XXX_Size() int {
+	return xxx_messageInfo_ClientPauseRpcResponse.Size(m)
+}
+func (m *ClientPauseRpcResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_ClientPauseRpcResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_ClientPauseRpcResponse proto.InternalMessageInfo
+
 func init() {
 	proto.RegisterType((*TimeRequest)(nil), "time.TimeRequest")
 	proto.RegisterType((*TimeResponse)(nil), "time.TimeResponse")
+	proto.RegisterType((*ServerPauseRpcRequest)(nil), "time.ServerPauseRpcRequest")
+	proto.RegisterType((*ServerPauseRpcResponse)(nil), "time.ServerPauseRpcResponse")
+	proto.RegisterType((*ClientPauseRpcRequest)(nil), "time.ClientPauseRpcRequest")
+	proto.RegisterType((*ClientPauseRpcResponse)(nil), "time.ClientPauseRpcResponse")
 }
 
 func init() { proto.RegisterFile("time.proto", fileDescriptor_49a92d779a28c7fd) }
 
 var fileDescriptor_49a92d779a28c7fd = []byte{
-	// 130 bytes of a gzipped FileDescriptorProto
+	// 235 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x2a, 0xc9, 0xcc, 0x4d,
 	0xd5, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x01, 0xb1, 0x95, 0x78, 0xb9, 0xb8, 0x43, 0x32,
 	0x73, 0x53, 0x83, 0x52, 0x0b, 0x4b, 0x53, 0x8b, 0x4b, 0x94, 0xf4, 0xb9, 0x78, 0x20, 0xdc, 0xe2,
 	0x82, 0xfc, 0xbc, 0xe2, 0x54, 0x21, 0x79, 0x2e, 0xee, 0xe2, 0xd4, 0xa2, 0xb2, 0xd4, 0xa2, 0x78,
-	0x90, 0x6a, 0x09, 0x46, 0x05, 0x46, 0x0d, 0xce, 0x20, 0x2e, 0x88, 0x10, 0x48, 0xa1, 0x91, 0x03,
-	0x17, 0x17, 0x88, 0x0e, 0x06, 0x8b, 0x08, 0x19, 0x71, 0xb1, 0xbb, 0xa7, 0x96, 0x80, 0x04, 0x84,
-	0x04, 0xf5, 0xc0, 0x76, 0x21, 0x19, 0x2e, 0x25, 0x84, 0x2c, 0x04, 0xb1, 0x40, 0x89, 0x21, 0x89,
-	0x0d, 0xec, 0x1c, 0x63, 0x40, 0x00, 0x00, 0x00, 0xff, 0xff, 0x87, 0xf7, 0x39, 0x30, 0x9c, 0x00,
-	0x00, 0x00,
+	0x90, 0x6a, 0x09, 0x46, 0x05, 0x46, 0x0d, 0xce, 0x20, 0x2e, 0x88, 0x10, 0x48, 0xa1, 0x92, 0x15,
+	0x97, 0x68, 0x30, 0x98, 0x17, 0x90, 0x58, 0x5a, 0x9c, 0x1a, 0x54, 0x90, 0x0c, 0x35, 0x49, 0x48,
+	0x91, 0x8b, 0xa7, 0x00, 0x24, 0x14, 0x5f, 0x9c, 0x9a, 0x9c, 0x9f, 0x97, 0x02, 0xd6, 0xca, 0x1c,
+	0xc4, 0x0d, 0x16, 0x0b, 0x06, 0x0b, 0x29, 0x59, 0x73, 0x89, 0xa1, 0xeb, 0x85, 0x5a, 0x4b, 0x84,
+	0x66, 0x71, 0x2e, 0x51, 0xe7, 0x9c, 0xcc, 0xd4, 0xbc, 0x12, 0x34, 0x8b, 0x95, 0x24, 0xb8, 0xc4,
+	0xd0, 0x25, 0x20, 0xa6, 0x1a, 0xdd, 0x63, 0xe4, 0xe2, 0x02, 0x39, 0x1a, 0x62, 0xa9, 0x90, 0x11,
+	0x17, 0xbb, 0x7b, 0x6a, 0x09, 0x48, 0x40, 0x48, 0x50, 0x0f, 0x1c, 0x30, 0x48, 0x21, 0x21, 0x25,
+	0x84, 0x2c, 0x04, 0x31, 0x40, 0x89, 0x41, 0xc8, 0x97, 0x8b, 0x0f, 0xd5, 0xc9, 0x42, 0xd2, 0x10,
+	0x75, 0x58, 0x03, 0x41, 0x4a, 0x06, 0xbb, 0x24, 0xb2, 0x71, 0xa8, 0x6e, 0x85, 0x19, 0x87, 0xd5,
+	0x6b, 0x30, 0xe3, 0xb0, 0x7b, 0x4f, 0x89, 0x21, 0x89, 0x0d, 0x1c, 0xb3, 0xc6, 0x80, 0x00, 0x00,
+	0x00, 0xff, 0xff, 0xaf, 0x3d, 0x90, 0x62, 0xe7, 0x01, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -125,6 +275,8 @@ const _ = grpc.SupportPackageIsVersion4
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type TimeServerClient interface {
 	GetTime(ctx context.Context, in *TimeRequest, opts ...grpc.CallOption) (*TimeResponse, error)
+	ServerPauseRpc(ctx context.Context, in *ServerPauseRpcRequest, opts ...grpc.CallOption) (*ServerPauseRpcResponse, error)
+	ClientPauseRpc(ctx context.Context, in *ClientPauseRpcRequest, opts ...grpc.CallOption) (*ClientPauseRpcResponse, error)
 }
 
 type timeServerClient struct {
@@ -144,9 +296,29 @@ func (c *timeServerClient) GetTime(ctx context.Context, in *TimeRequest, opts ..
 	return out, nil
 }
 
+func (c *timeServerClient) ServerPauseRpc(ctx context.Context, in *ServerPauseRpcRequest, opts ...grpc.CallOption) (*ServerPauseRpcResponse, error) {
+	out := new(ServerPauseRpcResponse)
+	err := c.cc.Invoke(ctx, "/time.TimeServer/ServerPauseRpc", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *timeServerClient) ClientPauseRpc(ctx context.Context, in *ClientPauseRpcRequest, opts ...grpc.CallOption) (*ClientPauseRpcResponse, error) {
+	out := new(ClientPauseRpcResponse)
+	err := c.cc.Invoke(ctx, "/time.TimeServer/ClientPauseRpc", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // TimeServerServer is the server API for TimeServer service.
 type TimeServerServer interface {
 	GetTime(context.Context, *TimeRequest) (*TimeResponse, error)
+	ServerPauseRpc(context.Context, *ServerPauseRpcRequest) (*ServerPauseRpcResponse, error)
+	ClientPauseRpc(context.Context, *ClientPauseRpcRequest) (*ClientPauseRpcResponse, error)
 }
 
 func RegisterTimeServerServer(s *grpc.Server, srv TimeServerServer) {
@@ -171,6 +343,42 @@ func _TimeServer_GetTime_Handler(srv interface{}, ctx context.Context, dec func(
 	return interceptor(ctx, in, info, handler)
 }
 
+func _TimeServer_ServerPauseRpc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ServerPauseRpcRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TimeServerServer).ServerPauseRpc(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/time.TimeServer/ServerPauseRpc",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TimeServerServer).ServerPauseRpc(ctx, req.(*ServerPauseRpcRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _TimeServer_ClientPauseRpc_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ClientPauseRpcRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(TimeServerServer).ClientPauseRpc(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/time.TimeServer/ClientPauseRpc",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(TimeServerServer).ClientPauseRpc(ctx, req.(*ClientPauseRpcRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _TimeServer_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "time.TimeServer",
 	HandlerType: (*TimeServerServer)(nil),
@@ -178,6 +386,14 @@ var _TimeServer_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetTime",
 			Handler:    _TimeServer_GetTime_Handler,
+		},
+		{
+			MethodName: "ServerPauseRpc",
+			Handler:    _TimeServer_ServerPauseRpc_Handler,
+		},
+		{
+			MethodName: "ClientPauseRpc",
+			Handler:    _TimeServer_ClientPauseRpc_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

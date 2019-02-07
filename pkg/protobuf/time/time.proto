@@ -3,6 +3,8 @@ package time;
 
 service TimeServer{
     rpc GetTime(TimeRequest) returns (TimeResponse){}
+    rpc ServerPauseRpc(ServerPauseRpcRequest) returns (ServerPauseRpcResponse){}
+    rpc ClientPauseRpc(ClientPauseRpcRequest) returns (ClientPauseRpcResponse){}
 }
 
 message TimeRequest {
@@ -12,3 +14,16 @@ message TimeResponse{
     string server_time = 1;
 }
 
+message ServerPauseRpcRequest{
+    int64 pause_second = 1;
+}
+
+message ServerPauseRpcResponse{
+    int64 pause_second = 1;
+}
+
+message ClientPauseRpcRequest{
+}
+
+message ClientPauseRpcResponse{
+}

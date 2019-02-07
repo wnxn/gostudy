@@ -7,6 +7,8 @@ import (
 	"net"
 	"fmt"
 	"github.com/golang/glog"
+	"google.golang.org/grpc/status"
+	"google.golang.org/grpc/codes"
 )
 type TimeService struct{
 }
@@ -16,6 +18,15 @@ func (ts *TimeService)GetTime(ctx context.Context, in *TimeRequest) (*TimeRespon
 	return &TimeResponse{
 		ServerTime: t.String(),
 	},nil
+}
+
+func (ts *TimeService)ServerPauseRpc(ctx context.Context, in *ServerPauseRpcRequest) (*ServerPauseRpcResponse, error){
+	return nil, status.Error(codes.Unimplemented,"")
+}
+
+func  (ts *TimeService)ClientPauseRpc(ctx context.Context, in *ClientPauseRpcRequest)(*ClientPauseRpcResponse,
+	error){
+		return nil, status.Error(codes.Unimplemented,"")
 }
 
 func RunServer(){

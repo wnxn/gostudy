@@ -164,6 +164,32 @@ func calDistance(p1 *Point, p2 *Point)int32{
 	return int32(distance)
 }
 
+func loggingServerUnaryInterceptor(
+	ctx context.Context,
+	req interface{},
+	info *grpc.UnaryServerInfo,
+	handler grpc.UnaryHandler) (resp interface{}, err error){
+	start := time.Now()
+	glog.Infof("call %s with request %v at %s", info.FullMethod, req, start.String())
+	resp, err = handler(ctx, req)
+	glog.Infof("call %s with response %v duration %s", info.FullMethod, resp, time.Since(start).String())
+	return
+}
+
+func loggingServerStreamInterceptor(
+	srv interface{},
+	ss grpc.ServerStream,
+	info *grpc.StreamServerInfo,
+	handler grpc.StreamHandler) error{
+	start := time.Now()
+	glog.Infof("call %s with [s stream, c stream]=[%t, %t] at %s", info.FullMethod, info.IsServerStream,
+		info.IsClientStream,
+		start.String())
+	err := handler(srv,ss)
+	glog.Infof("call %s with response %v duration %s", info.FullMethod, ss.SendMsg, time.Since(start).String())
+	return err
+}
+
 func Server(){
 	lis, err := net.Listen("tcp", Address)
 	if err != nil{
@@ -172,7 +198,8 @@ func Server(){
 	routeService := &RouteService{routeNotes: make(map[string][]*RouteNote)}
 	routeService.loadFeatures(os.Getenv("GOPATH") + DBFile)
 	glog.Infof("load [%d] features", len(routeService.features))
-	svr := grpc.NewServer()
+
+	svr := grpc.NewServer(grpc.UnaryInterceptor(loggingServerUnaryInterceptor), grpc.StreamInterceptor(loggingServerStreamInterceptor))
 	RegisterRouteGuideServer(svr, routeService)
 	err = svr.Serve(lis)
 	if err != nil{
@@ -241,6 +268,14 @@ func ExecListFeature(){
 }
 
 func ExecRecordRoute(){
+	// Create a random number of random points
+	r := rand.New(rand.NewSource(time.Now().UnixNano()))
+	pointCount := int(r.Int31n(100)) + 2 // Traverse at least two points
+	var points []*Point
+	for i := 0; i < pointCount; i++ {
+		points = append(points, randomPoint(r))
+	}
+
 	conn, err := grpc.Dial(Address, grpc.WithInsecure())
 	if err != nil{
 		glog.Fatal(err)
@@ -250,13 +285,7 @@ func ExecRecordRoute(){
 
 	stream, err := client.RecordRoute(context.Background())
 
-	// Create a random number of random points
-	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	pointCount := int(r.Int31n(100)) + 2 // Traverse at least two points
-	var points []*Point
-	for i := 0; i < pointCount; i++ {
-		points = append(points, randomPoint(r))
-	}
+
 
 	for _,v:=range points{
 		if err := stream.Send(v); err!=nil{

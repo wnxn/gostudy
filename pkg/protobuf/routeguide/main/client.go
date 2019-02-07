@@ -13,7 +13,7 @@ func init() {
 func main() {
 	flag.Parse()
 //	routeguide.ExecGetFeature()
-//	routeguide.ExecListFeature()
-//	routeguide.ExecRecordRoute()
+	routeguide.ExecListFeature()
+	routeguide.ExecRecordRoute()
 	routeguide.ExecRouteChat()
 }
