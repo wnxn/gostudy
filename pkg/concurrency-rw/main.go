@@ -22,11 +22,11 @@ var (
 
 func write(){
 	wg := sync.WaitGroup{}
-	wg.Add(2)
-
+	wg.Add(*count)
 	t1 := time.Now()
 	for i:=*thread;i>0;i--{
 		go func(index int) {
+
 			f, _ := os.Create(*filepath + strconv.Itoa(index))
 			for j := 0; j < *count*10000; j++ {
 				_, err := f.Write([]byte("0x6766c3279a7b32e52e89b24d203dd311aaf3019f9dd182f0128d8f12ab4490c2"))
