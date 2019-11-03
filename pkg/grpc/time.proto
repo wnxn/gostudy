@@ -1,0 +1,16 @@
+syntax = "proto3";
+package time.v1;
+
+option go_package = "time";
+
+service Timer{
+    rpc GetCurrentTime(GetCurrentTimeRequest)
+        returns (GetCurrentTimeResponse){}
+}
+
+message GetCurrentTimeRequest{
+}
+
+message GetCurrentTimeResponse{
+    string time = 1;
+}

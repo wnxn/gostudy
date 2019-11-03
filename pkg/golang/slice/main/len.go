@@ -1,6 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"reflect"
+	"unsafe"
+)
 
 type people struct{
 	name string
@@ -12,6 +16,7 @@ func nilPeople()[]people{
 }
 
 func main() {
-	s := nilPeople()
-	fmt.Printf("len = %d, isnil %t", len(s), s==nil)
+	fmt.Printf("%#v\n", []byte(s))
+	//s := nilPeople()
+	//fmt.Printf("len = %d, isnil %t", len(s), s==nil)
 }
