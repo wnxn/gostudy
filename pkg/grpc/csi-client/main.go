@@ -27,6 +27,14 @@ func main() {
 func DeleteSnapshot(cc csi.ControllerClient){
 	volReq:=&csi.CreateVolumeRequest{
 		Name:                      "csi-client",
+		VolumeCapabilities: []*csi.VolumeCapability{
+			&csi.VolumeCapability{
+				AccessType:           nil,
+				AccessMode:          &csi.VolumeCapability_AccessMode{
+					Mode:                 csi.VolumeCapability_AccessMode_SINGLE_NODE_WRITER,
+				},
+			},
+		},
 	}
 	volResp, err := cc.CreateVolume(context.Background(),volReq)
 	if err != nil{
