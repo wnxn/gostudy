@@ -16,7 +16,7 @@ import (
 )
 
 var (
-	endpoint = flag.String("endpoint", "unix://tmp/csi.sock", "CSI endpoint")
+	endpoint = flag.String("endpoint", "unix:///tmp/csi.sock", "CSI endpoint")
 )
 
 func main() {
