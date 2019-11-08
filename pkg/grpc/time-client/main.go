@@ -8,6 +8,7 @@ import (
 	"github.com/kubernetes-csi/csi-lib-utils/protosanitizer"
 	rpctime "github.com/wnxn/gostudy/pkg/grpc/time"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/keepalive"
 	"k8s.io/klog"
 	"net"
 	"os"
@@ -22,7 +23,9 @@ var (
 func main() {
 	klog.InitFlags(nil)
 	flag.Parse()
-	conn, err := grpc.Dial(*endpoint, grpc.WithInsecure())
+	conn, err := grpc.Dial(*endpoint,
+		grpc.WithInsecure(),
+		grpc.WithKeepaliveParams(keepalive.ClientParameters{PermitWithoutStream: true}))
 	//conn, err := Connect(*endpoint)
 	if err != nil {
 		klog.Errorf("error connecting to CSI driver: %v", err)
