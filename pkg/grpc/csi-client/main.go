@@ -15,6 +15,8 @@ var (
 )
 
 func main() {
+	klog.InitFlags(nil)
+	flag.Parse()
 	conn, err := grpc.Dial(*endpoint,
 		grpc.WithInsecure(),
 		grpc.WithKeepaliveParams(keepalive.ClientParameters{PermitWithoutStream: true}))
