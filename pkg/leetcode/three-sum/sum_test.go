@@ -6,9 +6,9 @@ import (
 )
 
 func TestThreeSum(t *testing.T) {
-	testcases := []struct{
+	testcases := []struct {
 		nums []int
-		res [][]int
+		res  [][]int
 	}{
 		//{
 		//	nums: []int{-1,0,1,2,-1,-4},
@@ -19,18 +19,18 @@ func TestThreeSum(t *testing.T) {
 		//	res: [][]int{{0,0,0}},
 		//},
 		{
-			nums: []int{3,0,-2,-1,1,2},
+			nums: []int{3, 0, -2, -1, 1, 2},
 			res: [][]int{
-				{-2,-1,3},
-				{-2,0,2},
+				{-2, -1, 3},
+				{-2, 0, 2},
 			},
 		},
 	}
-	for _,test:=range testcases{
+	for _, test := range testcases {
 		res := ThreeSum(test.nums)
-		if !reflect.DeepEqual(res, test.res){
+		if !reflect.DeepEqual(res, test.res) {
 			t.Errorf("TwoSum(%v) expect %v, but actually %v", test.nums, test.res, res)
 		}
 	}
-	
+
 }

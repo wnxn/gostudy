@@ -5,7 +5,6 @@ import (
 	"flag"
 	"github.com/container-storage-interface/spec/lib/go/csi"
 	"google.golang.org/grpc"
-	"google.golang.org/grpc/keepalive"
 	"k8s.io/klog"
 	"os"
 )
@@ -18,8 +17,8 @@ func main() {
 	klog.InitFlags(nil)
 	flag.Parse()
 	conn, err := grpc.Dial(*endpoint,
-		grpc.WithInsecure(),
-		grpc.WithKeepaliveParams(keepalive.ClientParameters{PermitWithoutStream: true}))
+		grpc.WithInsecure())
+	//	grpc.WithKeepaliveParams(keepalive.ClientParameters{PermitWithoutStream: true}))
 	if err != nil{
 		klog.Errorf("error connecting to CSI driver: %v", err)
 		os.Exit(1)
