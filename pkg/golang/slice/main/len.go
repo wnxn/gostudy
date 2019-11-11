@@ -6,12 +6,12 @@ import (
 	"unsafe"
 )
 
-type people struct{
+type people struct {
 	name string
-	age int
+	age  int
 }
 
-func nilPeople()[]people{
+func nilPeople() []people {
 	return nil
 }
 
