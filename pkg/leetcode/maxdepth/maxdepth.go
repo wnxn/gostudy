@@ -1,28 +1,28 @@
 package maxdepth
 
 type TreeNode struct {
-	     Val int
-	     Left *TreeNode
-	     Right *TreeNode
+	Val   int
+	Left  *TreeNode
+	Right *TreeNode
 }
 
-func MaxDepth(root *TreeNode)int{
-	if root == nil{
+func MaxDepth(root *TreeNode) int {
+	if root == nil {
 		return 0
 	}
 	var buf []*TreeNode
 	var lastVisit *TreeNode
-	max, cur := 0,0
-	for root != nil{
+	max, cur := 0, 0
+	for root != nil {
 		buf = append(buf, root)
 		lastVisit = root
 		cur++
-		if cur > max{
-			max=cur
+		if cur > max {
+			max = cur
 		}
 		root = root.Left
 	}
-	for len(buf) !=0{
+	for len(buf) != 0 {
 		p := buf[len(buf)-1]
 		cur--
 		buf = buf[:len(buf)-1]
@@ -37,8 +37,8 @@ func MaxDepth(root *TreeNode)int{
 				p = p.Left
 				cur++
 			}
-			if cur > max{
-				max=cur
+			if cur > max {
+				max = cur
 			}
 		}
 	}
