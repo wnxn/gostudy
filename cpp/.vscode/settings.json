@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.mustache": "json",
+        "vector": "cpp"
+    }
+}

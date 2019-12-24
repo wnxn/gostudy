@@ -1,4 +1,4 @@
-package binarysearchtree
+package binarytree
 
 type SearchTreeData struct {
 		left  *SearchTreeData

@@ -11,7 +11,7 @@
 // func (*SearchTreeData) MapString(func(int) string) []string
 // func (*SearchTreeData) MapInt(func(int) int) []int
 
-package binarysearchtree
+package binarytree
 
 import (
 	"reflect"
