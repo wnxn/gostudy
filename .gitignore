@@ -1,6 +1,7 @@
 /.idea/*
-*.exe
+*exe
 *.out
 *.html
  algorithm/.idea/
 main
+exe
