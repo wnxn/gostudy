@@ -1,5 +1,7 @@
 #include <iostream>
 #include <vector>
+#include <assert.h>
+#include <iomanip>
 using namespace std;
 
 int main(){
@@ -22,4 +24,15 @@ int main(){
         cout << " " << item;
     }
     cout << endl;
+
+    double balance[]={100.0, 2.0, 3.4};
+    assert(sizeof(balance)/sizeof(*balance)==3);
+    cout << "Element" << std::setw(13) << "Value" << endl;
+
+    cout << sizeof(balance) << endl;
+    double *p = balance;
+    cout << *p << endl;
+    printf("%0xu, %0xu\n", balance+2, balance+1);
+    printf("%f, %f, %d\n", *(balance+2), *(balance+1), sizeof(*balance));
+    strcpy
 }
